@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {Category, Product} = require('../../models');
 
-router.get('/', (req, res => {
+router.get('/', (req, res) => {
     Category.findAll({
         include: [
             {
@@ -15,7 +15,7 @@ router.get('/', (req, res => {
         console.log(err);
         res.status(500).json(err);
     });
-}));
+});
 
 router.get('/:id', (req,res) => {
     Category.findOne({
